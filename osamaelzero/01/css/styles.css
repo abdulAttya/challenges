@@ -115,12 +115,12 @@ body {
     border-radius: 10%;
     width: 3vw;
     height: 3vw;
-    position: relative;
+    position: absolute;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    bottom: 8%;
-    left: 82%;
+    top: 33vw;
+    right: 36vw;
     background-color: var(--blue-color);
     z-index: 10;
 }
