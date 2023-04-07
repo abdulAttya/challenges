@@ -110,7 +110,7 @@ body {
 .container::after {
     content: 'A+';
     color: #f6f6f6;
-    font-size: 1.3em;
+    font-size: 1.8vw;
     font-weight: bold;
     border-radius: 10%;
     width: 3vw;
