@@ -1,0 +1,64 @@
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(12,1fr);
+    gap: 10px;
+    height: 1000px;
+    margin-bottom: 100px;
+    counter-reset: items;
+}
+
+.container * {
+    counter-increment: items;
+    border-radius: 10px ;
+    border: solid rgb(145, 4, 4) 10px;
+    text-align: center;
+}
+.container > *::after {
+    content: "(" counter(items) ")";
+}
+
+@media screen and (max-width:575px){
+    :root{--header-area: 1 / 1 / span 1 / -1;
+    --blog-area: 2 / 1 / span 1 / -1;
+    --main-area: 3 / 1 / span 1 / -1;
+    --sidebar-area: 4 / 1 / span 1 / -1;
+    --footer-area: 5 / 1 / span 1 / -1;}
+}
+
+.header {
+    grid-area: var(--header-area);
+}
+.blog {
+grid-area: var(--blog-area);
+}
+
+.main {
+grid-area: var(--main-area);
+}
+.sidebar {
+grid-area: var(--sidebar-area);
+}
+.footer {
+    grid-area: var(--footer-area);
+}
+@media screen and (min-width: 576px) {
+    :root {
+    --header-area: 1 / 1 / 4 / -1;
+    --blog-area: 4 / 1 / 7 / 5;
+    --main-area: 4 / 5 / 10 / -1;
+    --sidebar-area:  7 / 1 / -1 / 5;
+    --footer-area: 10 / 5 / -1 / -1;
+    }
+    
+}
+@media screen and (min-width: 1024px) {
+    :root {
+        --header-area: 1 / 1 / 4 / -1;
+        --blog-area:4 / 1 / 10 / 3;
+        --main-area: 4 / 3 / 10 / 11;
+        --sidebar-area:  4 / 11 / -1 / -1;
+        --footer-area: 10 / 1 / -1 / 11;
+    }
+}

@@ -1,0 +1,27 @@
+.big-title {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    column-gap: 10px;
+}
+
+.content {
+    background-color: #fefefe;
+    border-radius: 1rem;
+    border: solid #f79;
+    height: 600px;
+    text-align: center;
+}
+.container nav {
+    grid-column: span 2;
+}
+.container main {
+    grid-column: span 6;
+}
+.container section {
+    grid-column: span 4;
+}
