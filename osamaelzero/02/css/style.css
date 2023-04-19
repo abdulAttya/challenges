@@ -8,8 +8,8 @@
 
 .container {
 
-    width: 900px;
-    height: 150px;
+    width: 100%;
+    height: calc(100vh - 600px );
     margin: 300px auto;
     /*box-shadow: 0px 10px 15px 9px rgba(0, 0, 0, 0.1);*/
     font: 5rem var(--family);
@@ -22,19 +22,123 @@
     border-radius: 8px;
     padding: 9px;
     box-sizing: border-box;
-    border-image: repeating-linear-gradient(180deg, #0f9d58 20%, #db4437 30%, #4285f4 60%, #f4b400 80%) no-repeat;
-    animation: rotation-animation alternate infinite 2s;
+
+}
+
+.failed {
+    text-decoration: line-through;
+}
+.todo {
+    font-family: Roboto;
+}
+
+.google-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.google {
+    font: bold 2rem Roboto ;
+    color: #09031b;
+   background-color: antiquewhite;
+   padding: 100px 200px;
+   border-radius: 10px;
+   background-image: linear-gradient(
+    180deg,
+    black 30%,
+     green 30%,
+     green 90%,
+      red 90%
+      );
+   /*transition: background-image 2s ease-out;*/
+   
+}
+.google:hover {
+    /*background-image: linear-gradient(
+        180deg,
+        black 60%,
+         green 60%,
+         green 90%,
+          red 90%
+          );*/
+        animation : rotateo 2s ease-out;
+}
+@keyframes rotateo {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 0%}
+}
+
+.loading {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    counter-reset: circles;
+    background-color: #DB4437;
+    height: 400px;
+}
+.loading .circle {
+    content: counter(circles);
+    counter-increment: circles;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:orchid;
+}
+.loading:hover .circle{
+    animation : test 2s cubic-bezier(0.23, 1, 0.320, 1) calc(.5s * var(--ord)) infinite  alternate;
+
 }
 
 
-@keyframes rotation-animation {
-    from {
-        border-image: repeating-linear-gradient(1deg, #0f9d58 20%, #db4437 30%, #4285f4 60%, #f4b400 80%) no-repeat;
-
+@keyframes test {
+    0% {
+        transform: scale(1);
     }
-
-    to {
-        border-image: repeating-linear-gradient(270deg, #0f9d58 20%, #db4437 30%, #4285f4 60%, #f4b400 80%) no-repeat;
-
+    50% {
+        transform: scale(1.1);
+        transform: translateY(80px);
     }
+    100% {
+        transform: translateY(-80px);
+        transform: translateX(20px);
+    }
+}
+.realGoogle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 100px;
+}
+
+.text {
+    position: absolute;
+    z-index: 4;
+    border-radius: 100px;
+    margin : 10px;
+    background-color: aliceblue;
+    width: 392px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.colors {
+    width: 1000px;
+    height: 500px;
+    border-radius: 100px;
+    background: conic-gradient( var(--red) 45deg, var(--green) 45deg 90deg, var(--yellow) 90deg 135deg,      var(--blue) 135deg 180deg, var(--red) 180deg 225deg, var(--green) 225deg 270deg, var(--yellow) 270deg 315deg, var(--blue) 315deg 360deg);
+
+}
+
+.realGoogle:hover .colors{
+    animation:riti 5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+@keyframes riti {
+    0% {transform: scale(6.5) rotate(0deg);}
+    100% {transform: scale(6.5) rotate(360deg);}
 }
